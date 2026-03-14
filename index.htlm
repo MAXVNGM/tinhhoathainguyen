@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thái Nguyên Đệ Nhất Danh Trà & Mái Trường Tức Tranh</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
+    <!-- Font Awesome cho Icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-gradient: linear-gradient(135deg, #1b5e20 0%, #4caf50 100%);
+            --gold-gradient: linear-gradient(135deg, #ffc107 0%, #ff9800 100%);
+            --text-dark: #1a1a1a;
+            --shadow-glow: 0 10px 30px rgba(76, 175, 80, 0.2);
+        }
+
+        * { box-sizing: border-box; scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Quicksand', sans-serif;
+            margin: 0; padding: 0;
+            background-color: #f8faf9;
+            color: var(--text-dark);
+            overflow-x: hidden;
+        }
+
+        /* Navigation */
+        nav {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(15px);
+            padding: 1.2rem 5%;
+            position: fixed;
+            top: 0; left: 0; right: 0;
+            z-index: 999999;
+            display: flex; justify-content: space-between; align-items: center;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .logo {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 900; font-size: 1.2rem;
+            background: var(--primary-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            position: relative;
+            z-index: 999999;
+            flex-shrink: 0;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 20px;
+            position: relative;
+            z-index: 999999;
+        }
+
+        .nav-links a {
+            text-decoration: none; 
+            color: var(--text-dark);
+            font-weight: 700;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+            position: relative;
+            padding: 5px 0;
+            white-space: nowrap;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            width: 0; height: 3px;
+            bottom: 0; left: 0;
+            background: var(--primary-gradient);
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover { color: #2e7d32; }
+        .nav-links a:hover::after { width: 100%; }
+
+        /* Responsive Menu cho Điện thoại */
+        @media (max-width: 768px) {
+            nav {
+                flex-direction: column;
+                padding: 1rem;
+                gap: 10px;
+            }
+            .nav-links {
+                width: 100%;
+                overflow-x: auto; 
+                padding-bottom: 5px;
+                justify-content: flex-start;
+                -webkit-overflow-scrolling: touch;
+            }
+            .nav-links::-webkit-scrollbar { height: 2px; }
+            .nav-links::-webkit-scrollbar-thumb { background: #ddd; }
+        }
+
+        /* Hero Section */
+        header {
+            height: 100vh;
+            background-image: url('images/canh-hai-che.png');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            display: flex; flex-direction: column; justify-content: center; align-items: center;
+            color: white; text-align: center;
+            clip-path: polygon(0 0, 100% 0, 100% 92%, 0% 100%);
+            position: relative;
+            padding: 0 20px;
+            z-index: 1;
+        }
+
+        header::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 1;
+        }
+
+        header h1, header p, .btn-cta {
+            position: relative;
+            z-index: 2;
+        }
+
+        header h1 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: clamp(2.2rem, 8vw, 5rem);
+            font-weight: 900; margin: 0;
+            text-shadow: 0 5px 25px rgba(0,0,0,0.7);
+        }
+
+        header p { 
+            font-size: clamp(1rem, 2vw, 1.4rem); 
+            max-width: 800px; margin: 20px auto;
+            color: #f0f0f0;
+            line-height: 1.6;
+        }
+
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+
+        /* Animation Section */
+        .section { 
+            padding: 80px 0; 
+            opacity: 0; 
+            transform: translateY(40px); 
+            transition: all 1s ease-out; 
+        }
+        .section.visible { opacity: 1; transform: translateY(0); }
+
+        .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; }
+
+        @media (max-width: 968px) { 
+            .grid-2 { grid-template-columns: 1fr; text-align: center; }
+        }
+
+        .badge {
+            background: var(--gold-gradient); color: white;
+            padding: 6px 18px; border-radius: 30px;
+            font-size: 0.75rem; font-weight: bold; text-transform: uppercase;
+            display: inline-block; margin-bottom: 15px;
+        }
+
+        h2 { font-size: 2.2rem; color: #1b5e20; margin: 10px 0; font-family: 'Montserrat', sans-serif; font-weight: 800; }
+        .accent-line { width: 60px; height: 5px; background: var(--gold-gradient); border-radius: 3px; margin-bottom: 25px; }
+
+        /* Video Box */
+        .video-container {
+            margin: 40px 0;
+            background: #f1f8f2;
+            padding: 40px;
+            border-radius: 40px;
+        }
+        .video-wrapper {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        }
+        .video-wrapper iframe {
+            position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none;
+        }
+
+        /* Card Styles */
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin-top: 40px;
+        }
+        .item-card {
+            background: white; border-radius: 20px; overflow: hidden;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05); transition: 0.3s;
+        }
+        .item-card:hover { transform: translateY(-8px); }
+        .item-img { width: 100%; height: 220px; object-fit: cover; }
+        .item-info { padding: 20px; }
+        .item-info h3 { color: #1b5e20; margin: 0 0 10px 0; font-size: 1.2rem; }
+
+        .image-card {
+            border-radius: 20px; overflow: hidden;
+            box-shadow: var(--shadow-glow); border: 6px solid white;
+        }
+        .image-card img { width: 100%; height: 400px; object-fit: cover; display: block; }
+
+        .btn-cta {
+            background: var(--gold-gradient); color: white; 
+            padding: 15px 35px; border-radius: 50px; 
+            text-decoration: none; font-weight: 800; 
+            margin-top: 20px; display: inline-block;
+            transition: 0.3s; box-shadow: 0 5px 15px rgba(255, 152, 0, 0.3);
+        }
+
+        footer {
+            background: #0a2510; color: white; padding: 80px 5% 40px; text-align: center;
+            clip-path: polygon(0 15%, 100% 0, 100% 100%, 0% 100%);
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo">Thái Nguyên - Tức Tranh</div>
+        <div class="nav-links">
+            <a href="#tinh">Khám Phá</a>
+            <a href="#dia-danh">Danh Thắng</a>
+            <a href="#am-thuc">Tinh Hoa</a>
+            <a href="#truong">Mái Trường</a>
+            <a href="#video">Phóng Sự</a>
+            <a href="#ai-canva">Công Nghệ AI</a>
+        </div>
+    </nav>
+
+    <header>
+        <h1>XỨ TRÀ HỘI TỤ</h1>
+        <p>Hành trình khám phá vẻ đẹp kỳ vĩ của "Thủ đô gió ngàn" Thái Nguyên và hơi thở tri thức từ mái trường THPT Tức Tranh qua nhãn quan công nghệ tương lai.</p>
+        <a href="#tinh" class="btn-cta">Khởi hành ngay</a>
+    </header>
+
+    <div class="container">
+
+        <!-- 1. TỔNG QUAN -->
+        <section id="tinh" class="section">
+            <div class="grid-2">
+                <div class="text-content">
+                    <span class="badge">Trái tim vùng Việt Bắc</span>
+                    <h2>Thái Nguyên Hội Tụ</h2>
+                    <div class="accent-line"></div>
+                    <p>Thái Nguyên không chỉ là trung tâm giáo dục, công nghiệp lớn của miền Bắc mà còn là mảnh đất giàu truyền thống cách mạng. Nơi đây quyến rũ lòng người bởi sắc xanh của những đồi chè tít tắp và sự nồng hậu, chân thành của con người xứ trà.</p>
+                </div>
+                <div class="image-card">
+                    <img src="images/don-dien-tra-xanh.png" alt="Vẻ đẹp đồi chè Thái Nguyên">
+                </div>
+            </div>
+
+            <!-- VIDEO BỔ SUNG DƯỚI THÁI NGUYÊN QUÊ TA -->
+            <div class="video-container" style="background: transparent; padding: 20px 0; margin-top: 40px;">
+                <div style="text-align: center; margin-bottom: 20px;">
+                    <p style="font-weight: 600; color: #2e7d32; font-size: 1.2rem;">Góc nhìn toàn cảnh về thiên nhiên và con người Thái Nguyên</p>
+                </div>
+                <div class="video-wrapper" style="max-width: 900px; margin: 0 auto;">
+                    <iframe src="https://www.youtube-nocookie.com/embed/mCl2KVlzTGE" title="YouTube video" referrerpolicy="strict-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. DANH THẮNG -->
+        <section id="dia-danh" class="section">
+            <div style="text-align: center;">
+                <span class="badge">Tuyệt tác thiên nhiên</span>
+                <h2>Cung Đường Di Sản</h2>
+            </div>
+            <div class="card-grid">
+                <div class="item-card">
+                    <img src="images/phong-canh-dao-xanh.png" class="item-img" alt="Khu du lịch Hồ Núi Cốc">
+                    <div class="item-info"><h3>Huyền Thoại Hồ Núi Cốc</h3><p>Nơi minh chứng cho tình yêu bất diệt giữa Chàng Cốc và Nàng Công trong khung cảnh sơn thủy hữu tình.</p></div>
+                </div>
+                <div class="item-card">
+                    <img src="images/tan-cuong.jpg" class="item-img" alt="Vùng trà Tân Cương">
+                    <div class="item-info"><h3>Thánh Địa Tân Cương</h3><p>Vùng đất sản sinh ra những búp chè "Cánh hạc, nọng tôm" tinh túy, niềm tự hào của ẩm thực Việt Nam.</p></div>
+                </div>
+                <div class="item-card">
+                    <img src="images/atk-dinh-hoa.jpg" class="item-img" alt="Di tích ATK Định Hóa">
+                    <div class="item-info"><h3>Chiến Khu ATK</h3><p>Về thăm "Thủ đô kháng chiến" năm xưa để cảm nhận lòng tự hào dân tộc và ý chí kiên cường của cha ông.</p></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. ẨM THỰC -->
+        <section id="am-thuc" class="section">
+            <div style="text-align: center;">
+                <span class="badge">Vị ngon khó cưỡng</span>
+                <h2>Quà Tặng Từ Đất Mẹ</h2>
+            </div>
+            <div class="card-grid">
+                <div class="item-card">
+                    <img src="/images/banh-chung.png" class="item-img" alt="Bánh Chưng Bờ Đậu truyền thống">
+                    <div class="item-info"><h3>Bánh Chưng Bờ Đậu</h3><p>Hương vị tết cổ truyền đọng lại trong từng hạt gạo nếp dẻo thơm và nước nguồn mát lành từ núi rừng.</p></div>
+                </div>
+                <div class="item-card">
+                    <img src="images/nem-chua-dai-tu.jpg" class="item-img" alt="Đặc sản Nem Chua Đại Từ">
+                    <div class="item-info"><h3>Nem Chua Đại Từ</h3><p>Món nhắm trứ danh với vị chua thanh, cay nồng, là sự kết hợp hoàn hảo giữa kỹ thuật chế biến thủ công và nguyên liệu tươi ngon.</p></div>
+                </div>
+                <div class="item-card">
+                    <img src="images/che-thai-nguyen.jpg" class="item-img" alt="Thương hiệu Chè Thái Nguyên">
+                    <div class="item-info"><h3>Đệ Nhất Danh Trà</h3><p>Thưởng thức một tách trà nóng, cảm nhận vị chát thanh nơi đầu lưỡi và hậu ngọt sâu thẳm như tâm hồn người Thái Nguyên.</p></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. TRƯỜNG TỨC TRANH -->
+        <section id="truong" class="section">
+            <div class="grid-2">
+                <div class="image-card">
+                    <img src="images/truong-hoc-hien-dai.png" alt="Khuôn viên trường THPT Tức Tranh">
+                </div>
+                <div class="text-content">
+                    <span class="badge">Nơi ươm mầm tài năng</span>
+                    <h2>THPT Tức Tranh</h2>
+                    <div class="accent-line"></div>
+                    <p>Tọa lạc giữa những đồi chè bao la của huyện Phú Lương, trường THPT Tức Tranh không chỉ là nơi truyền thụ tri thức mà còn là ngôi nhà chung, nơi nuôi dưỡng những ước mơ và hoài bão của thế hệ trẻ năng động, sáng tạo.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. VIDEO GIỚI THIỆU CHUNG -->
+        <section id="video" class="section video-container">
+            <div style="text-align: center; margin-bottom: 30px;">
+                <span class="badge">Tư liệu Media</span>
+                <h2>Khám Phá Qua Ống Kính</h2>
+            </div>
+            <div class="video-wrapper">
+                <iframe src="https://www.youtube-nocookie.com/embed/8GasQQNDqFU" title="YouTube video" referrerpolicy="strict-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </section>
+
+        <!-- 6. SÁNG TẠO AI -->
+        <section id="ai-canva" class="section" style="text-align: center;">
+            <span class="badge">Chân trời công nghệ</span>
+            <h2>Vũ Trụ Sáng Tạo AI</h2>
+            <div class="card-grid">
+                <div class="item-card">
+                    <img src="images/poster-de-nhat-danh.png" class="item-img" alt="Tác phẩm nghệ thuật AI">
+                    <div class="item-info"><h3>Nghệ Thuật Số</h3><p>Kết hợp giữa vẻ đẹp truyền thống và sức mạnh của trí tuệ nhân tạo để tạo nên những tác phẩm mãn nhãn.</p></div>
+                </div>
+                <div class="item-card">
+                    <img src="https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?auto=format&fit=crop&w=600&q=80" class="item-img" alt="Canva Design AI">
+                    <div class="item-info"><h3>Thiết Kế Đột Phá</h3><p>Ứng dụng Canva AI giúp hiện thực hóa mọi ý tưởng thiết kế chỉ trong vài giây, phá vỡ mọi giới hạn sáng tạo.</p></div>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <footer>
+        <h2>THÁI NGUYÊN - TỨC TRANH DIGITAL</h2>
+        <p style="max-width: 600px; margin: 0 auto 30px; opacity: 0.8;">Chúng tôi tự hào là thế hệ trẻ tiếp nối giá trị lịch sử và không ngừng vươn xa cùng công nghệ số.</p>
+        <div style="margin: 20px 0;">
+            <a href="#" style="color:white; margin:0 15px; font-size: 1.5rem;"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" style="color:white; margin:0 15px; font-size: 1.5rem;"><i class="fab fa-youtube"></i></a>
+        </div>
+        <p style="opacity: 0.5; font-size: 0.8rem;">&copy; 2026 Nhóm Sáng Tạo Trẻ 11A1 - THPT Tức Tranh | Thái Nguyên</p>
+    </footer>
+
+    <script>
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) entry.target.classList.add('visible');
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.section').forEach(s => observer.observe(s));
+    </script>
+</body>
+</html>
