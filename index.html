@@ -56,6 +56,7 @@
             gap: 20px;
             position: relative;
             z-index: 999999;
+            align-items: center;
         }
 
         .nav-links a {
@@ -67,6 +68,44 @@
             position: relative;
             padding: 5px 0;
             white-space: nowrap;
+        }
+
+        /* Dropdown Logic */
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            right: 0;
+            background-color: white;
+            min-width: 200px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.1);
+            z-index: 1000000;
+            border-radius: 10px;
+            overflow: hidden;
+            border-top: 3px solid #1b5e20;
+            margin-top: 10px;
+        }
+
+        .dropdown-content a {
+            color: var(--text-dark);
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            font-size: 0.85rem;
+            transition: 0.2s;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #f1f8f2;
+            color: #1b5e20;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
         }
 
         .nav-links a::after {
@@ -97,6 +136,15 @@
             }
             .nav-links::-webkit-scrollbar { height: 2px; }
             .nav-links::-webkit-scrollbar-thumb { background: #ddd; }
+            
+            .dropdown-content {
+                position: static;
+                box-shadow: none;
+                border: none;
+                background: #f1f8f2;
+                display: block; 
+                margin-top: 5px;
+            }
         }
 
         /* Hero Section */
@@ -228,12 +276,22 @@
     <nav>
         <div class="logo">Thái Nguyên - Tức Tranh</div>
         <div class="nav-links">
-            <a href="#tinh">Khám Phá</a>
-            <a href="#dia-danh">Danh Thắng</a>
-            <a href="#am-thuc">Tinh Hoa</a>
-            <a href="#truong">Mái Trường</a>
-            <a href="#video">Phóng Sự</a>
-            <a href="#ai-canva">Công Nghệ AI</a>
+            <a href="kham-pha.html" target="_blank">Khám Phá</a>
+            <a href="tinh-hoa.html" target="_blank">Tinh Hoa</a>
+            <a href="mai-truong.html" target="_blank">Mái Trường</a>
+            <a href="phong-su.html" target="_blank">Phóng Sự</a>
+            <a href="cong-nghe-ai.html" target="_blank">Công Nghệ AI</a>
+            
+            <div class="dropdown">
+                <a href="javascript:void(0)" style="cursor: default;">Trường THPT Tức Tranh <i class="fas fa-chevron-down" style="font-size: 0.7rem; margin-left: 3px;"></i></a>
+                <div class="dropdown-content">
+                    <a href="https://www.facebook.com/profile.php?id=100093671745704" target="_blank">Page trường</a>
+                    <a href="https://www.facebook.com/p/%C4%90o%C3%A0n-Tr%C6%B0%E1%BB%9Dng-THPT-T%E1%BB%A9c-Tranh-100095483234536/" target="_blank">Page Đoàn Trường</a>
+                    <a href="https://thpt-tuctranh-thainguyen.violet.vn/" target="_blank">Thư viện trường</a>
+                    <a href="https://www.youtube.com/channel/UCL2tfEqiS2zQhWBzi7FvPNw" target="_blank">Kênh Youtube trường</a>
+                    <a href="https://www.tiktok.com/@doantruongthpttuctranh/video/7509402942617799956" target="_blank">Kênh Đoàn Trường (TikTok)</a>
+                </div>
+            </div>
         </div>
     </nav>
 
@@ -270,7 +328,7 @@
             </div>
         </section>
 
-        <!-- 2. DANH THẮNG -->
+        <!-- 2. DANH THẮNG (Phần nội dung vẫn giữ lại, chỉ bỏ trên menu điều hướng theo ý bạn) -->
         <section id="dia-danh" class="section">
             <div style="text-align: center;">
                 <span class="badge">Tuyệt tác thiên nhiên</span>

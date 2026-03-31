@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tinh Hoa Văn Hóa Thái Nguyên</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;600;700&family=Playfair+Display:ital,wght@0,700;1,700&display=swap');
+        
+        body {
+            font-family: 'Lexend', sans-serif;
+            scroll-behavior: smooth;
+        }
+        .serif-title {
+            font-family: 'Playfair Display', serif;
+        }
+        .glass-nav {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(229, 231, 235, 0.5);
+        }
+        
+        /* Hero Section với ảnh nền cố định */
+        header {
+            height: 100vh;
+            background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('imagesconlai/images2/anh_nen.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            text-align: center;
+        }
+
+        .hover-card:hover {
+            transform: translateY(-5px);
+            transition: all 0.3s ease;
+        }
+        
+        .content-image {
+            width: 100%;
+            height: auto;
+            border-radius: 0.75rem;
+            margin: 1.5rem 0;
+            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 glass-nav">
+        <div class="max-w-6xl mx-auto px-4 py-3 flex justify-between items-center">
+            <a href="index.html" class="flex items-center space-x-2 text-green-700 font-bold text-xl">
+                <i class="fas fa-leaf"></i>
+                <span>Thái Nguyên Travel</span>
+            </a>
+            <div class="hidden md:flex space-x-8 font-medium text-gray-700">
+                <a href="index.html" class="hover:text-green-600 transition">Trang chủ</a>
+                <a href="#tra" class="hover:text-green-600 transition">Trà Tân Cương</a>
+                <a href="#am-thuc" class="hover:text-green-600 transition">Ẩm thực</a>
+                <a href="#van-hoa" class="hover:text-green-600 transition">Bản sắc</a>
+            </div>
+            <button class="md:hidden text-gray-600">
+                <i class="fas fa-bars text-2xl"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header>
+        <div class="max-w-4xl mx-auto px-4">
+            <span class="text-green-400 font-bold uppercase tracking-widest text-sm drop-shadow-md">Khám phá tâm hồn xứ Trà</span>
+            <h1 class="serif-title text-4xl md:text-6xl mt-4 mb-6 leading-tight drop-shadow-lg">
+                Tinh Hoa Văn Hóa Thái Nguyên: <br>Hội Tụ Đất Trời & Lòng Người
+            </h1>
+            <p class="text-lg md:text-xl italic drop-shadow-md">"Chè Thái, Gái Tuyên - Những giá trị trường tồn cùng thời gian"</p>
+        </div>
+    </header>
+
+    <main class="max-w-4xl mx-auto px-4 py-12 leading-relaxed text-lg">
+        
+        <!-- 1. Trà Tân Cương -->
+        <section id="tra" class="mb-20">
+            <h2 class="serif-title text-3xl text-green-800 mb-6 flex items-center">
+                <span class="w-10 h-1 text-green-600 bg-green-600 inline-block mr-4"></span>
+                1. Trà Tân Cương – "Đệ Nhất Danh Trà"
+            </h2>
+            <p class="mb-6">
+                Nhắc đến Thái Nguyên, người ta nghĩ ngay đến những đồi chè xanh mướt trải dài vô tận. Trà Tân Cương không chỉ là một sản phẩm nông nghiệp, đó là sự kết tinh giữa thiên nhiên và bàn tay tài hoa của con người. Những nương chè được tưới mát bởi nguồn nước từ <strong>Hồ Núi Cốc</strong> và che chở bởi dãy núi <strong>Tam Đảo</strong>, tạo nên hương vị không đâu trộn lẫn được.
+            </p>
+
+            <div class="grid md:grid-cols-2 gap-8 my-10">
+                <div class="bg-white p-6 rounded-xl shadow-sm border-l-4 border-green-500 hover-card">
+                    <h3 class="font-bold text-xl mb-3 text-green-700 italic">Hái chè</h3>
+                    <p class="text-gray-600 italic">Những người phụ nữ bản địa với đôi tay thoăn thoắt chọn lọc những búp chè "một tôm hai lá" vào lúc sáng sớm khi sương còn chưa tan hết.</p>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-sm border-l-4 border-green-500 hover-card">
+                    <h3 class="font-bold text-xl mb-3 text-green-700 italic">Xao chè</h3>
+                    <p class="text-gray-600 italic">Đây là giai đoạn quan trọng nhất. Nghệ nhân phải dùng bàn tay trần để cảm nhận nhiệt độ của chảo đồng, điều chỉnh lửa sao cho búp chè xoăn tít lại như móc câu, giữ trọn vẹn màu xanh và hương thơm.</p>
+                </div>
+            </div>
+
+            <!-- Ảnh nghệ nhân sao chè -->
+            <img src="imagesconlai/images2/nghe_nhan_sao_tre.jpg" alt="Nghệ nhân sao chè" class="content-image">
+
+            <h3 class="text-2xl font-bold mt-10 mb-4 text-gray-900">Văn hóa thưởng trà – Nét đẹp tĩnh tại</h3>
+            <p class="mb-4">Người Thái Nguyên thưởng trà không vội vàng. Một ấm trà ngon phải đạt đủ tứ tuyệt: <strong>"Sắc - Hương - Vị - Thần"</strong>.</p>
+            <ul class="space-y-4 list-none">
+                <li class="flex items-start">
+                    <span class="bg-green-100 text-green-700 font-bold px-3 py-1 rounded mr-3">Sắc</span>
+                    <span>Nước trà có màu vàng óng như mật ong rừng hoặc xanh nhạt như lá non.</span>
+                </li>
+                <li class="flex items-start">
+                    <span class="bg-green-100 text-green-700 font-bold px-3 py-1 rounded mr-3">Hương</span>
+                    <span>Mùi thơm thoang thoảng như mùi cốm mới, nồng nàn mà thanh khiết.</span>
+                </li>
+                <li class="flex items-start">
+                    <span class="bg-green-100 text-green-700 font-bold px-3 py-1 rounded mr-3">Vị</span>
+                    <span>Ban đầu có chút chát nhẹ nơi đầu lưỡi, nhưng ngay sau đó là vị ngọt hậu đậm đà len lỏi khắp khoang miệng.</span>
+                </li>
+            </ul>
+
+            <!-- Ảnh chén trà -->
+            <img src="imagesconlai/images2/tren_tra_tan_cuong.jpg" alt="Thưởng trà Tân Cương" class="content-image">
+        </section>
+
+        <!-- 2. Ẩm thực -->
+        <section id="am-thuc" class="mb-20">
+            <h2 class="serif-title text-3xl text-green-800 mb-6 flex items-center">
+                <span class="w-10 h-1 text-green-600 bg-green-600 inline-block mr-4"></span>
+                2. Ẩm Thực Thái Nguyên: Sự Giao Thoa Của Đất Và Trời
+            </h2>
+            <p class="mb-8">Tinh hoa văn hóa Thái Nguyên còn nằm ở mâm cơm của người dân địa phương. Những món ăn tại đây không cầu kỳ về hình thức nhưng lại cực kỳ chú trọng vào nguyên liệu tự nhiên và quy trình chế biến tỉ mỉ.</p>
+
+            <div class="space-y-12">
+                <div class="bg-white rounded-2xl p-8 shadow-sm border-t-4 border-red-500">
+                    <h3 class="text-2xl font-bold text-red-700 mb-4">Bánh chưng Bờ Đậu – Thức quà từ ngọc thực</h3>
+                    <p class="mb-4">Nằm ở huyện Phú Lương, làng bánh chưng Bờ Đậu là nơi lưu giữ bí quyết gói bánh không cần khuôn nhưng vẫn vuông vức mười cái như một.</p>
+                    <p class="text-gray-700"><strong>Bí quyết:</strong> Phải là gạo nếp vải Định Hóa hạt to, tròn, thơm nức hòa quyện cùng thịt lợn đen thái miếng lớn và đỗ xanh vỏ mỏng. Đặc biệt, bánh được luộc bằng nước giếng trong vắt của vùng Bờ Đậu.</p>
+                </div>
+
+                <div class="bg-white rounded-2xl p-8 shadow-sm border-t-4 border-orange-400">
+                    <h3 class="text-2xl font-bold text-orange-700 mb-4">Nem chua Đại Từ – Vị chua thanh nồng nàn</h3>
+                    <p class="mb-4">Khác với các vùng miền khác, nem chua Đại Từ mang một đặc điểm riêng biệt. Nem không ăn ngay mà thường được nướng trên than hồng hoặc rán sơ.</p>
+                    <p class="text-gray-700 italic">"Khi lớp lá chuối bên ngoài cháy sém, mùi thơm của lá ổi và thịt lợn lên men tỏa ra vô cùng kích thích."</p>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-4">
+                    <div class="bg-gray-100 p-6 rounded-xl">
+                        <h4 class="font-bold mb-2">Mì gạo Hùng Sơn</h4>
+                        <p class="text-sm">Từ lâu đã nổi tiếng bởi độ dai, trắng và vị ngọt của gạo nguyên chất, không hóa chất tẩy trắng.</p>
+                    </div>
+                    <div class="bg-gray-100 p-6 rounded-xl">
+                        <h4 class="font-bold mb-2">Cơm lam Định Hóa</h4>
+                        <p class="text-sm">Thức quà của rừng già, nơi hạt gạo nếp được nướng trong ống tre nứa, thơm mùi khói bếp.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. Bản sắc văn hóa -->
+        <section id="van-hoa" class="mb-20">
+            <h2 class="serif-title text-3xl text-green-800 mb-6 flex items-center">
+                <span class="w-10 h-1 text-green-600 bg-green-600 inline-block mr-4"></span>
+                3. Bản Sắc Văn Hóa Các Dân Tộc: Đa Dạng Trong Thống Nhất
+            </h2>
+            <p class="mb-6">Thái Nguyên là nơi chung sống của nhiều dân tộc như Kinh, Tày, Nùng, Sán Dìu, Dao... Mỗi dân tộc đóng góp một viên gạch để xây dựng nên tòa lâu đài văn hóa rực rỡ.</p>
+
+            <div class="grid md:grid-cols-2 gap-8 mb-10">
+                <div>
+                    <h4 class="font-bold text-xl mb-2">Hát Then, đàn Tính</h4>
+                    <p>Hát Then là loại hình nghệ thuật diễn xướng dân gian đặc sắc của người Tày, Nùng. Tiếng đàn Tính ngân vang giữa núi rừng như lời thủ thỉ của thiên nhiên.</p>
+                    <img src="imagesconlai/images2/anh_hat_then.jpg" alt="Hát Then" class="content-image">
+                </div>
+                <div>
+                    <h4 class="font-bold text-xl mb-2">Lễ hội Lồng Tồng</h4>
+                    <p>Vào những ngày đầu xuân, du khách sẽ được hòa mình vào không khí náo nhiệt với các trò chơi dân gian như ném còn, đẩy gậy.</p>
+                    <img src="imagesconlai/images2/le_hoi_tong_long.jpg" alt="Lễ hội Lồng Tồng" class="content-image">
+                </div>
+            </div>
+
+            <!-- Ảnh các cô gái đánh đàn tính -->
+            <img src="imagesconlai/images2/anh_cac_co_gai_danh_dan_tinh.jpg" alt="Thiếu nữ đánh đàn tính" class="content-image">
+        </section>
+
+        <!-- 4. Bảo tồn số -->
+        <section class="bg-green-900 text-white p-8 md:p-12 rounded-3xl mb-20 shadow-xl">
+            <h2 class="serif-title text-3xl mb-6">4. Bảo Tồn Và Phát Huy Tinh Hoa Trong Kỷ Nguyên Số</h2>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div>
+                    <i class="fas fa-mobile-alt text-3xl mb-4 text-green-400"></i>
+                    <h4 class="font-bold mb-2">Số hóa di sản</h4>
+                    <p class="text-green-100 text-sm">Các bảo tàng trực tuyến giúp người trẻ dễ dàng tiếp cận với lịch sử hào hùng của dân tộc.</p>
+                </div>
+                <div>
+                    <i class="fas fa-map-marked-alt text-3xl mb-4 text-green-400"></i>
+                    <h4 class="font-bold mb-2">Trà và Du lịch</h4>
+                    <p class="text-green-100 text-sm">Các tour trải nghiệm giúp du khách hiểu về giá trị lao động và sự tận tâm của người làm trà.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Lời kết -->
+        <footer class="border-t pt-12 pb-24">
+            <div class="text-center">
+                <h2 class="serif-title text-3xl mb-6 text-gray-900">Lời Kết</h2>
+                <div class="max-w-2xl mx-auto space-y-4 text-gray-600 italic">
+                    <p>"Tinh hoa văn hóa Thái Nguyên là sự kết tinh giữa mồ hôi, nước mắt và tình yêu đất nước của bao thế hệ."</p>
+                    <p>Dù bạn là một người con của Thái Nguyên hay là một lữ khách phương xa, khi chạm vào những giá trị tinh hoa này, bạn sẽ thấy mình thêm yêu và trân trọng những giá trị truyền thống của dân tộc.</p>
+                </div>
+                <div class="mt-12">
+                    <a href="index.html" class="inline-block bg-green-700 text-white px-8 py-3 rounded-full hover:bg-green-800 transition shadow-lg">
+                        Quay lại trang chính
+                    </a>
+                </div>
+            </div>
+        </footer>
+
+    </main>
+
+    <!-- Footer Simple -->
+    <div class="bg-gray-900 text-gray-400 py-8 text-center text-sm">
+        <p>&copy; 2026 Thái Nguyên Travel. Khám phá vẻ đẹp truyền thống.</p>
+    </div>
+
+</body>
+</html>
